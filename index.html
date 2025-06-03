@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>NotWoops Scripts</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+    body {
+      background: linear-gradient(135deg, #1a1a2e, #3a0ca3);
+      color: white;
+      font-family: 'Poppins', sans-serif;
+      min-height: 100vh;
+      padding-top: 4.5rem;
+      backdrop-filter: blur(10px);
+    }
+
+    header {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      background: rgba(0,0,0,0.5);
+      z-index: 1030;
+      padding: 1rem 2rem;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    header h1 {
+      font-weight: 700;
+      font-size: 1.4rem;
+      margin: 0;
+    }
+
+    .btn-discord {
+      background: #5865F2;
+      border: none;
+      font-weight: 600;
+      color: white;
+      padding: 0.5rem 1rem;
+      border-radius: 8px;
+      transition: background-color 0.3s ease;
+      text-decoration: none;
+    }
+
+    .btn-discord:hover {
+      background: #4752c4;
+      text-decoration: none;
+    }
+
+    .card, .executor-card {
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 16px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      box-shadow: 0 8px 30px rgba(0,0,0,0.3);
+      padding: 1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .card textarea {
+      resize: none;
+      font-family: monospace;
+      font-size: 0.85rem;
+      background-color: #1e1e2f !important;
+      border: 1px solid #555;
+      color: #fff;
+    }
+
+    footer {
+      margin-top: 3rem;
+      text-align: center;
+      font-size: 0.9rem;
+      color: #bbb;
+      padding-bottom: 2rem;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="d-flex align-items-center gap-2">
+    <img src="https://cdn.discordapp.com/emojis/831202077820715070.gif?size=96&quality=lossless" alt="Faction" style="width:40px; height:40px;">
+    <h1 class="m-0">Join Discord</h1>
+  </div>
+  <a href="https://discord.gg/ncf9A4YHDE" target="_blank" class="btn-discord">Join Discord</a>
+</header>
+
+<main class="container mt-4">
+  <div class="row">
+
+    <!-- SCRIPT BLOCK 1 -->
+    <div class="col-md-4 mb-3">
+      <div class="card bg-dark text-white shadow">
+        <div class="card-body">
+          <h5 class="card-title">Banana Hub (Free)</h5>
+          <textarea id="script1" class="form-control bg-dark text-white mb-2" rows="5" readonly>loadstring(game:HttpGet("https://raw.githubusercontent.com/Chiriku2013/BananaCatHub/refs/heads/main/BananaCatHub.lua"))()</textarea>
+          <button class="btn btn-sm btn-primary w-100" onclick="copyScript('script1')">Copy Script</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- SCRIPT BLOCK 2 -->
+    <div class="col-md-4 mb-3">
+      <div class="card bg-dark text-white shadow">
+        <div class="card-body">
+          <h5 class="card-title">Starry Moon Hub</h5>
+          <textarea id="script2" class="form-control bg-dark text-white mb-2" rows="5" readonly>repeat task.wait() until game:IsLoaded()
+repeat task.wait() until game.Players
+repeat task.wait() until game.Players.LocalPlayer
+getgenv().Team = "Marines" -- Can change Marines => Pirates
+loadstring(game:HttpGet("https://power-clock-api.vercel.app/api/clockbloxfruits", true))()</textarea>
+          <button class="btn btn-sm btn-primary w-100" onclick="copyScript('script2')">Copy Script</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- SCRIPT BLOCK 3 -->
+    <div class="col-md-4 mb-3">
+      <div class="card bg-dark text-white shadow">
+        <div class="card-body">
+          <h5 class="card-title">OMG Hub</h5>
+          <textarea id="script3" class="form-control bg-dark text-white mb-2" rows="5" readonly>loadstring(game:HttpGet("https://raw.githubusercontent.com/Omgshit/Scripts/main/MainLoader.lua"))()</textarea>
+          <button class="btn btn-sm btn-primary w-100" onclick="copyScript('script3')">Copy Script</button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</main>
+
+<footer>
+  &copy; Website current update is 1.0.0 | Made by NotWoops
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+function copyScript(id) {
+  const textarea = document.getElementById(id);
+  textarea.select();
+  textarea.setSelectionRange(0, 99999);
+  navigator.clipboard.writeText(textarea.value).then(() => {
+    alert("Script copied to clipboard!");
+  });
+}
+</script>
+
+</body>
+</html>
